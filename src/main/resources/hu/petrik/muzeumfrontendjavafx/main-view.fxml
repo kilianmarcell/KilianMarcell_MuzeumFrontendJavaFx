@@ -30,7 +30,7 @@
                </font></Button>
          </children>
       </HBox>
-      <TabPane prefHeight="340.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="muzeumTabPane" prefHeight="340.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="szobrokTab" text="Szobrok">
             <content>

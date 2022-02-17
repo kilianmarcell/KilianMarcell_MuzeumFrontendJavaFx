@@ -5,8 +5,6 @@ import com.google.gson.reflect.TypeToken;
 import hu.petrik.muzeumfrontendjavafx.Festmeny;
 import hu.petrik.muzeumfrontendjavafx.RequestHandler;
 import hu.petrik.muzeumfrontendjavafx.Response;
-import hu.petrik.muzeumfrontendjavafx.Szobor;
-import hu.petrik.muzeumfrontendjavafx.apis.ApiError;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

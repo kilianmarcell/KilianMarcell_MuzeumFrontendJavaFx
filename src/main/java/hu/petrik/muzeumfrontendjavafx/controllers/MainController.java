@@ -5,11 +5,9 @@ import hu.petrik.muzeumfrontendjavafx.apis.FestmenyApi;
 import hu.petrik.muzeumfrontendjavafx.Szobor;
 import hu.petrik.muzeumfrontendjavafx.apis.SzoborApi;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
@@ -41,8 +39,8 @@ public class MainController extends Controller {
     public Button modositButton;
     @FXML
     public Button torlesButton;
-
-    private boolean jelolt = false;
+    @FXML
+    private TabPane muzeumTabPane;
 
     public void initialize() {
         szoborEmberCol.setCellValueFactory(new PropertyValueFactory<>("person"));
@@ -82,21 +80,73 @@ public class MainController extends Controller {
     public void onHozaadasClick(ActionEvent actionEvent) {
         modositButton.setDisable(true);
         torlesButton.setDisable(true);
+
+        int tab = muzeumTabPane.getSelectionModel().getSelectedIndex();
+        if (tab == 0) {
+            try {
+                Controller hozzadas = ujAblak("szobor-hozzaad-view.fxml", "Szobor hozzáadása",
+                        320, 400);
+                hozzadas.getStage().setOnCloseRequest(event -> muzeumListaFeltolt());
+                hozzadas.getStage().show();
+            } catch (Exception e) {
+                hibaKiir(e);
+            }
+        } else if (tab == 1){
+            try {
+                Controller hozzadas = ujAblak("festmeny-hozzaad-view.fxml", "Festmény hozzáadása",
+                        320, 400);
+                hozzadas.getStage().setOnCloseRequest(event -> muzeumListaFeltolt());
+                hozzadas.getStage().show();
+            } catch (Exception e) {
+                hibaKiir(e);
+            }
+        }
     }
 
     @FXML
     public void onModositasClick(ActionEvent actionEvent) {
+        modositButton.setDisable(true);
+        torlesButton.setDisable(true);
+
+        int tab = muzeumTabPane.getSelectionModel().getSelectedIndex();
+        if (tab == 0) {
+            try {
+                Szobor modositando = szoborTableView.getSelectionModel().getSelectedItem();
+
+                SzoborModositController modosit = (SzoborModositController) ujAblak("szobor-modosit-view.fxml", "Szobor módosítása",
+                        320, 400);
+                modosit.setModositando(modositando);
+                modosit.getStage().setOnCloseRequest(event -> muzeumListaFeltolt());
+                modosit.getStage().show();
+            } catch (Exception e) {
+                hibaKiir(e);
+            }
+        } else if (tab == 1){
+            try {
+                Festmeny modositando = festmenyTableView.getSelectionModel().getSelectedItem();
+
+                FestmenyModositController modosit = (FestmenyModositController) ujAblak("festmeny-modosit-view.fxml", "Festmény módosítása",
+                        320, 400);
+                modosit.setModositando(modositando);
+                modosit.getStage().setOnCloseRequest(event -> muzeumListaFeltolt());
+                modosit.getStage().show();
+            } catch (Exception e) {
+                hibaKiir(e);
+            }
+        }
     }
 
     @FXML
     public void onTorlesClick(ActionEvent actionEvent) {
     }
 
+    @FXML
     public void onSzoborClick(MouseEvent mouseEvent) {
         modositButton.setDisable(false);
         torlesButton.setDisable(false);
     }
 
+    @FXML
     public void onFestmenyClick(MouseEvent mouseEvent) {
         modositButton.setDisable(false);
         torlesButton.setDisable(false);

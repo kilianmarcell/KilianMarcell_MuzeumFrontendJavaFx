@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
-public class SzoborHozzaadController {
+public class SzoborHozzaadController extends Controller{
     @FXML
     private Spinner magassagSpinner;
     @FXML
