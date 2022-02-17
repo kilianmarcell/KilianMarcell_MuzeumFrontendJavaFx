@@ -8,4 +8,6 @@ module hu.petrik.muzeumfrontendjavafx {
     exports hu.petrik.muzeumfrontendjavafx;
     exports hu.petrik.muzeumfrontendjavafx.controllers;
     opens hu.petrik.muzeumfrontendjavafx.controllers to javafx.fxml;
+    exports hu.petrik.muzeumfrontendjavafx.apis;
+    opens hu.petrik.muzeumfrontendjavafx.apis to com.google.gson, javafx.fxml;
 }

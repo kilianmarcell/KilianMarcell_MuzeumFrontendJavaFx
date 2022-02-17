@@ -1,7 +1,12 @@
-package hu.petrik.muzeumfrontendjavafx;
+package hu.petrik.muzeumfrontendjavafx.apis;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import hu.petrik.muzeumfrontendjavafx.Festmeny;
+import hu.petrik.muzeumfrontendjavafx.RequestHandler;
+import hu.petrik.muzeumfrontendjavafx.Response;
+import hu.petrik.muzeumfrontendjavafx.Szobor;
+import hu.petrik.muzeumfrontendjavafx.apis.ApiError;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

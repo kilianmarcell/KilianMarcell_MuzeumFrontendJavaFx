@@ -1,4 +1,4 @@
-package hu.petrik.muzeumfrontendjavafx;
+package hu.petrik.muzeumfrontendjavafx.apis;
 
 public class ApiError {
     private String message;

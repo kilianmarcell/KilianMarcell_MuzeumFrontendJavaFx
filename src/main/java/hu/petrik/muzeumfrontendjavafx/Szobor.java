@@ -2,15 +2,15 @@ package hu.petrik.muzeumfrontendjavafx;
 
 public class Szobor {
     private int id;
-    private String ember;
-    private int magassag;
-    private int ertek;
+    private String person;
+    private int height;
+    private int price;
 
-    public Szobor(int id, String ember, int magassag, int ertek) {
+    public Szobor(int id, String person, int height, int price) {
         this.id = id;
-        this.ember = ember;
-        this.magassag = magassag;
-        this.ertek = ertek;
+        this.person = person;
+        this.height = height;
+        this.price = price;
     }
 
     public int getId() {
@@ -21,27 +21,27 @@ public class Szobor {
         this.id = id;
     }
 
-    public String getEmber() {
-        return ember;
+    public String getPerson() {
+        return person;
     }
 
-    public void setEmber(String ember) {
-        this.ember = ember;
+    public void setPerson(String person) {
+        this.person = person;
     }
 
-    public int getMagassag() {
-        return magassag;
+    public int getHeight() {
+        return height;
     }
 
-    public void setMagassag(int magassag) {
-        this.magassag = magassag;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    public int getErtek() {
-        return ertek;
+    public int getPrice() {
+        return price;
     }
 
-    public void setErtek(int ertek) {
-        this.ertek = ertek;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
