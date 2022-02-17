@@ -5,7 +5,6 @@ import hu.petrik.muzeumfrontendjavafx.apis.FestmenyApi;
 import hu.petrik.muzeumfrontendjavafx.Szobor;
 import hu.petrik.muzeumfrontendjavafx.apis.SzoborApi;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;

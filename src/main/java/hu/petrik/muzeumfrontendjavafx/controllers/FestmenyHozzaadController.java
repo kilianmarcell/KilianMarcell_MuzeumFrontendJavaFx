@@ -16,6 +16,7 @@ public class FestmenyHozzaadController extends Controller{
 
     @FXML
     public void megseClick(ActionEvent actionEvent) {
+        this.stage.close();
     }
 
     @FXML
