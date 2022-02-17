@@ -42,7 +42,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
                 </Label>
-                <Spinner fx:id="ertekSpinner" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Spinner fx:id="ertekSpinner" editable="true" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                    <GridPane.margin>
                       <Insets left="20.0" right="10.0" />
                    </GridPane.margin>
@@ -57,7 +57,7 @@
                <GridPane.margin>
                   <Insets left="20.0" right="10.0" />
                </GridPane.margin></TextField>
-                <Spinner fx:id="magassagSpinner" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Spinner fx:id="magassagSpinner" editable="true" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                    <GridPane.margin>
                       <Insets left="20.0" right="10.0" />
                    </GridPane.margin>

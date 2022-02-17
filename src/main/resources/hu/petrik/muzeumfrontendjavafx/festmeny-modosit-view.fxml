@@ -33,12 +33,12 @@
                <GridPane.margin>
                   <Insets left="20.0" right="10.0" />
                </GridPane.margin></TextField>
-                <Spinner fx:id="megjelenesEveSpinner" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Spinner fx:id="megjelenesEveSpinner" editable="true" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                    <GridPane.margin>
                       <Insets left="20.0" right="10.0" />
                    </GridPane.margin>
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="2022" min="-3000" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="2022" min="0" />
                     </valueFactory>
                 </Spinner>
                 <Label text="Megjelenés éve:" GridPane.rowIndex="1">
