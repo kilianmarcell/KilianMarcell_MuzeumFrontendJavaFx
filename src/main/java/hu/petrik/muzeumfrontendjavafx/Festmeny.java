@@ -1,12 +1,12 @@
 package hu.petrik.muzeumfrontendjavafx;
 
-public class Festmény {
+public class Festmeny {
     private int id;
     private String cim;
     private int ev;
     private int kiallitva;
 
-    public Festmény(int id, String cim, int ev, int kiallitva) {
+    public Festmeny(int id, String cim, int ev, int kiallitva) {
         this.id = id;
         this.cim = cim;
         this.ev = ev;

@@ -1,4 +1,4 @@
-package hu.petrik.muzeumfrontendjavafx;
+package hu.petrik.muzeumfrontendjavafx.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
