@@ -1,14 +1,42 @@
 package hu.petrik.muzeumfrontendjavafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class MainController {
     @FXML
-    private Label welcomeText;
+    public Tab szobrokTab;
+    @FXML
+    public TableView szoborTableView;
+    @FXML
+    public TableColumn szoborEmberCol;
+    @FXML
+    public TableColumn szoborMagassagCol;
+    @FXML
+    public TableColumn szoborErtekCol;
+    @FXML
+    public Tab festmenyekTab;
+    @FXML
+    public TableView festmenyTableView;
+    @FXML
+    public TableColumn festmenyCimCol;
+    @FXML
+    public TableColumn festmenyEvCol;
+    @FXML
+    public TableColumn festmenyKiallitvaCol;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void onHozaadasClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void onModositasClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void onTorlesClick(ActionEvent actionEvent) {
     }
 }
