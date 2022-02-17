@@ -138,6 +138,32 @@ public class MainController extends Controller {
 
     @FXML
     public void onTorlesClick(ActionEvent actionEvent) {
+        int tab = muzeumTabPane.getSelectionModel().getSelectedIndex();
+        if (tab == 0) {
+            Szobor torlendoSzobor = szoborTableView.getSelectionModel().getSelectedItem();
+            if (!confirm("Biztosan törli az alábbi szobrot: " + torlendoSzobor.getPerson())) {
+                return;
+            }
+            try {
+                boolean sikeres = SzoborApi.deleteSzobor(torlendoSzobor.getId());
+                alert(sikeres ? "Sikeres törlés!" : "Sikertelen törlés!");
+                muzeumListaFeltolt();
+            } catch (IOException e) {
+                hibaKiir(e);
+            }
+        } else if (tab == 1) {
+            Festmeny torlendoFestmeny = festmenyTableView.getSelectionModel().getSelectedItem();
+            if (!confirm("Biztosan törli az alábbi festményt: " + torlendoFestmeny.getTitle())) {
+                return;
+            }
+            try {
+                boolean sikeres = FestmenyApi.deleteFestmeny(torlendoFestmeny.getId());
+                alert(sikeres ? "Sikeres törlés!" : "Sikertelen törlés!");
+                muzeumListaFeltolt();
+            } catch (IOException e) {
+                hibaKiir(e);
+            }
+        }
     }
 
     @FXML
