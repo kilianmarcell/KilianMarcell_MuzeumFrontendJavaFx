@@ -26,11 +26,11 @@
                   <Insets right="20.0" />
                </GridPane.margin>
                 </Label>
-                <Spinner prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Spinner fx:id="megjelenesEveSpinner" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="10.0" />
                </GridPane.margin></Spinner>
-                <TextField prefWidth="180.0" GridPane.columnIndex="1">
+                <TextField fx:id="cimTextField" prefWidth="180.0" GridPane.columnIndex="1">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -53,7 +53,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
                 </Label>
-            <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <CheckBox fx:id="kiallitvaCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin></CheckBox>
@@ -61,14 +61,14 @@
       </GridPane>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Mégse">
+                <Button mnemonicParsing="false" onAction="#megseClick" prefHeight="50.0" prefWidth="120.0" text="Mégse">
                     <HBox.margin>
                         <Insets right="20.0" />
                     </HBox.margin>
                     <font>
                         <Font size="14.0" />
                     </font></Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Hozzáadás">
+                <Button mnemonicParsing="false" onAction="#hozzaadasClick" prefHeight="50.0" prefWidth="120.0" text="Hozzáadás">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
