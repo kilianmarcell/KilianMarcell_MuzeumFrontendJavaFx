@@ -6,10 +6,12 @@ import hu.petrik.muzeumfrontendjavafx.Szobor;
 import hu.petrik.muzeumfrontendjavafx.apis.SzoborApi;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,6 +37,12 @@ public class MainController extends Controller {
     public TableColumn<Festmeny, Integer> festmenyEvCol;
     @FXML
     public TableColumn<Festmeny, Integer> festmenyKiallitvaCol;
+    @FXML
+    public Button modositButton;
+    @FXML
+    public Button torlesButton;
+
+    private boolean jelolt = false;
 
     public void initialize() {
         szoborEmberCol.setCellValueFactory(new PropertyValueFactory<>("person"));
@@ -65,10 +73,15 @@ public class MainController extends Controller {
         } catch (IOException e) {
             hibaKiir(e);
         }
+
+        modositButton.setDisable(true);
+        torlesButton.setDisable(true);
     }
 
     @FXML
     public void onHozaadasClick(ActionEvent actionEvent) {
+        modositButton.setDisable(true);
+        torlesButton.setDisable(true);
     }
 
     @FXML
@@ -77,5 +90,15 @@ public class MainController extends Controller {
 
     @FXML
     public void onTorlesClick(ActionEvent actionEvent) {
+    }
+
+    public void onSzoborClick(MouseEvent mouseEvent) {
+        modositButton.setDisable(false);
+        torlesButton.setDisable(false);
+    }
+
+    public void onFestmenyClick(MouseEvent mouseEvent) {
+        modositButton.setDisable(false);
+        torlesButton.setDisable(false);
     }
 }
