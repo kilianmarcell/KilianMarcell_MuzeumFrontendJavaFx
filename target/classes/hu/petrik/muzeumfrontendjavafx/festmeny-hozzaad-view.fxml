@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="519.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.petrik.muzeumfrontendjavafx.controllers.SzoborHozzaadController">
+<VBox alignment="CENTER" prefHeight="519.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.petrik.muzeumfrontendjavafx.controllers.FestmenyHozzaadController">
     <children>
       <GridPane>
         <columnConstraints>
@@ -18,7 +18,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-                <Label text="Ember:">
+                <Label text="Megjelenés éve:" GridPane.rowIndex="1">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -26,45 +26,41 @@
                   <Insets right="20.0" />
                </GridPane.margin>
                 </Label>
-                <Label text="Magasság:" GridPane.rowIndex="1">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-               <GridPane.margin>
-                  <Insets right="20.0" />
-               </GridPane.margin>
-                </Label>
-                <Label text="Érték:" GridPane.rowIndex="2">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-               <GridPane.margin>
-                  <Insets right="20.0" />
-               </GridPane.margin>
-                </Label>
-                <Spinner fx:id="ertekSpinner" editable="true" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Spinner fx:id="megjelenesEveSpinner" editable="true" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                    <GridPane.margin>
                       <Insets left="20.0" right="10.0" />
                    </GridPane.margin>
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1000" max="9999999" min="1000" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="2022" min="0" />
                     </valueFactory>
                 </Spinner>
-                <TextField fx:id="emberTextField" prefWidth="180.0" GridPane.columnIndex="1">
+                <TextField fx:id="cimTextField" prefWidth="180.0" GridPane.columnIndex="1">
                     <font>
                         <Font size="14.0" />
                     </font>
                <GridPane.margin>
                   <Insets left="20.0" right="10.0" />
                </GridPane.margin></TextField>
-                <Spinner fx:id="magassagSpinner" editable="true" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                   <GridPane.margin>
-                      <Insets left="20.0" right="10.0" />
-                   </GridPane.margin>
-                    <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="250" min="0" />
-                    </valueFactory>
-                </Spinner>
+                <Label text="Cím:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+                </Label>
+                <Label text="Kiállítva:" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+                </Label>
+            <CheckBox fx:id="kiallitvaCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin></CheckBox>
          </children>
       </GridPane>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -76,7 +72,7 @@
                     <font>
                         <Font size="14.0" />
                     </font></Button>
-                <Button mnemonicParsing="false" onAction="#hozzadasClick" prefHeight="50.0" prefWidth="120.0" text="Hozzáadás">
+                <Button mnemonicParsing="false" onAction="#hozzaadasClick" prefHeight="50.0" prefWidth="120.0" text="Hozzáadás">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>

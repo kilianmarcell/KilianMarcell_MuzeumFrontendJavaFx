@@ -31,13 +31,8 @@ public class SzoborHozzaadController extends Controller{
             return;
         }
 
-        if (ember.length() < 8) {
-            alert("Az ember mezőnek legalább 8 karakter hosszúnak kell lennie!");
-            return;
-        }
-
-        if (ertek < 1000) {
-            alert("Az érték mezőnek legalább 1000-nek kell lennie!");
+        if (ember.length() < 5) {
+            alert("Az ember mezőnek legalább 5 karakter hosszúnak kell lennie!");
             return;
         }
 

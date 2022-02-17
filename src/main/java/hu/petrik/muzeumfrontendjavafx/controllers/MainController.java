@@ -100,6 +100,8 @@ public class MainController extends Controller {
                 hibaKiir(e);
             }
         }
+        
+        muzeumListaFeltolt();
     }
 
     @FXML
@@ -133,11 +135,14 @@ public class MainController extends Controller {
                 hibaKiir(e);
             }
         }
+
+        muzeumListaFeltolt();
     }
 
     @FXML
     public void onTorlesClick(ActionEvent actionEvent) {
         int tab = muzeumTabPane.getSelectionModel().getSelectedIndex();
+
         if (tab == 0) {
             Szobor torlendoSzobor = szoborTableView.getSelectionModel().getSelectedItem();
             if (!confirm("Biztosan törli az alábbi szobrot: " + torlendoSzobor.getPerson())) {
@@ -163,6 +168,8 @@ public class MainController extends Controller {
                 hibaKiir(e);
             }
         }
+
+        muzeumListaFeltolt();
     }
 
     @FXML

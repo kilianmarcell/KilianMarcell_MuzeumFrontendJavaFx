@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="515.0" prefWidth="612.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.petrik.muzeumfrontendjavafx.controllers.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onHozaadasClick" prefHeight="55.0" prefWidth="100.0" text="Hozzáadás" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="modositButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onModositasClick" prefHeight="55.0" prefWidth="100.0" text="Módosítás" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="40.0" right="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="torlesButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onTorlesClick" prefHeight="55.0" prefWidth="100.0" text="Törlés" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <TabPane fx:id="muzeumTabPane" prefHeight="340.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="szobrokTab" text="Szobrok">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="szoborTableView" onMouseClicked="#onSzoborClick" prefHeight="270.0" prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="szoborEmberCol" prefWidth="250.0" text="Ember" />
+                            <TableColumn fx:id="szoborMagassagCol" minWidth="0.0" prefWidth="100.0" text="Magasság" />
+                              <TableColumn fx:id="szoborErtekCol" minWidth="0.0" prefWidth="100.0" text="Érték" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="festmenyekTab" text="Festmények">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="festmenyTableView" onMouseClicked="#onFestmenyClick" prefHeight="311.0" prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="festmenyCimCol" prefWidth="250.0" text="Cím" />
+                            <TableColumn fx:id="festmenyEvCol" prefWidth="100.0" text="Év" />
+                              <TableColumn fx:id="festmenyKiallitvaCol" prefWidth="100.0" text="Kiállítva" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
